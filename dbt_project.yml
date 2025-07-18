@@ -32,7 +32,7 @@ clean-targets:         # directories to be removed by `dbt clean`
 
 models:
   oms_dbt_proj:
-    +transient: false
+    # +transient: false
     # profit_us:
     #   schema: TRAINING
     #   materialized: table
@@ -44,10 +44,13 @@ models:
     #   materialized: table
     customers_stg:
       schema: L2_PROCESSING
+      materialized: table
     orders_stg:
       schema: L2_PROCESSING
+      materialized: table
     orderitems_stg:
       schema: L2_PROCESSING
+      materialized: table
     customerrevenue:
       materialized: table
     orders_fact:
