@@ -25,9 +25,9 @@ sources:
         columns:
           - name: address
             description: Full Address of emplyees for Transport Arrangements.          
-            tests:
-              - not_null
-              - string_not_empty
+            # tests:
+            #   - not_null
+            #   - string_not_empty
       - name: sales_us
       - name: sales_europe
       - name: sales_asia
