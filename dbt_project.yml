@@ -29,8 +29,27 @@ clean-targets:         # directories to be removed by `dbt clean`
 # In this example config, we tell dbt to build all models in the example/
 # directory as views. These settings can be overridden in the individual model
 # files using the `{{ config(...) }}` macro.
+
 models:
   oms_dbt_proj:
-    # Config indicated by + and applies to all files under models/example/
-    example:
-      +materialized: view
+    +transient: false
+    # profit_us:
+    #   schema: TRAINING
+    #   materialized: table
+    # profit_uk:
+    #   schema: TRAINING
+    #   materialized: table
+    # profit_india:
+    #   schema: TRAINING
+    #   materialized: table
+    customers_stg:
+      schema: L2_PROCESSING
+    orders_stg:
+      schema: L2_PROCESSING
+    orderitems_stg:
+      schema: L2_PROCESSING
+    customerrevenue:
+      materialized: table
+    orders_fact:
+      schema: L2_PROCESSING
+      materialized: table
